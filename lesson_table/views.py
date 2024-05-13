@@ -18,7 +18,7 @@ def timestamp_to_weekday_and_dmy(timestamp):
     formatted_date = datetime.utcfromtimestamp(timestamp).strftime('%d.%m.%Y')
 
     return {'weekday': weekday, 'formatted_date': formatted_date}
-def grouh_ruyxat(request):
+def gruh_ruyxat(request):
     # URL dan ma'lumotlarni olish
     headers = {"Authorization": "Bearer WX9JzzBDySW6D--m6F83VJgDH-h5QNq8"}
     data = []
@@ -40,7 +40,7 @@ def grouh_ruyxat(request):
     # Ma'lumotlarni va unikal fakultetlarni qaytarish
     return data, unique_faculties
 def summu_dars_jadval(request):
-    groups, unique_faculties = grouh_ruyxat(request)
+    groups, unique_faculties = gruh_ruyxat(request)
     headers = {"Authorization": "Bearer WX9JzzBDySW6D--m6F83VJgDH-h5QNq8"}
     base_url = "https://student.sammu.uz/rest/v1/data/schedule-list"
     if request.method == 'POST':
@@ -126,4 +126,4 @@ def summu_dars_jadval(request):
     return render(request, 'summu_id.html', context)
 
 
-# Create your views here.
+
